@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RaagVerse</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <%- include("partials/navbar") %>
+
+    <main>
+
+        <!-- Welcome Section --> 
+        <% if (firstName) { %> 
+
+            <section class="welcome"> 
+
+                <h1>Welcome, <%= firstName %>!</h1> 
+                <p> Continue exploring the world of Indian classical music. </p> 
+
+            </section>
+             
+        <% } %>
+
+        <!-- Hero Section -->
+        <section class="hero">
+
+            <div class="hero-image">
+                <img src="/images/hero.png" alt="Indian Classical Music">
+            </div>
+
+            <div class="hero-content">
+                <h1>Discover the World of Indian Classical Music</h1>
+
+                <p>
+                    Explore the beauty, structure and emotions behind Indian classical music.
+                </p>
+
+                <a href="/raags">Explore Raags</a>
+            </div>
+
+        </section>
+
+
+        <!-- Introduction Section -->
+        <section class="introduction">
+
+            <div>
+                <h2>Indian Classical Music</h2>
+            </div>
+
+            <div>
+                <p>
+                    Indian classical music is a rich musical tradition built around
+                    melody, rhythm and improvisation. It has developed over centuries
+                    and is deeply connected with emotion, expression and culture.
+                </p>
+
+                <p>
+                    RaagVerse is a simple space to discover and understand the
+                    different elements that make Indian classical music unique.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Understanding Raag Section -->
+        <section class="understanding">
+
+            <h2>Understanding a Raag</h2>
+
+            <div class="understanding-content">
+
+                <div>
+                    <h3>Swar</h3>
+                    <p>
+                        Learn about the musical notes that form the foundation
+                        of Indian classical music.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Ras</h3>
+                    <p>
+                        Explore the emotions and feelings that a raag can express
+                        through its musical character.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Samay</h3>
+                    <p>
+                        Understand the traditional time of day associated
+                        with different raags.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <%- include("partials/footer") %>
+
+</body>
+
+</html>

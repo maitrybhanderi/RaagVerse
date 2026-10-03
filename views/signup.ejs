@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up - RaagVerse</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <%- include("partials/navbar") %>
+
+    <main>
+
+        <section class="signup">
+
+            <h1>Create an Account</h1>
+
+            <p>
+                Create your account and start exploring RaagVerse.
+            </p>
+
+            <form action="/signup" method="POST">
+
+                <div class="form-group">
+
+                    <label>First Name</label>
+
+                    <input
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        placeholder="Enter your first name"
+                        required
+                    >
+
+                    <small id="firstNameError">
+                        <%= firstNameError || "" %>
+                    </small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Last Name</label>
+
+                    <input
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        placeholder="Enter your last name"
+                        required
+                    >
+
+                    <small id="lastNameError">
+                        <%= lastNameError || "" %>
+                    </small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Email / User ID</label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                    <small id="emailError">
+                        <%= emailError || "" %>
+                    </small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Phone</label>
+
+                    <input
+                        type="tel"
+                        name="phone"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        required
+                    >
+
+                    <small id="phoneError">
+                        <%= phoneError || "" %>
+                    </small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <small id="passwordError">
+                        <%= passwordError || "" %>
+                    </small>
+
+                </div>
+
+
+                <button type="submit">Sign Up</button>
+
+            </form>
+
+
+            <p>
+                Already have an account?
+                <a href="/login">Login</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <%- include("partials/footer") %>
+
+
+    <script>
+
+        const firstName = document.getElementById("firstName");
+        const lastName = document.getElementById("lastName");
+        const email = document.getElementById("email");
+        const phone = document.getElementById("phone");
+        const password = document.getElementById("password");
+
+
+        function validateName(input, errorElement) {
+
+            const value = input.value;
+
+            if (!/^[A-Za-z]+$/.test(value)) {
+
+                errorElement.textContent = "Only letters are allowed";
+
+            } else {
+
+                errorElement.textContent = "";
+
+            }
+
+        }
+
+
+        firstName.addEventListener("input", function () {
+
+            validateName(
+                firstName,
+                document.getElementById("firstNameError")
+            );
+
+        });
+
+
+        lastName.addEventListener("input", function () {
+
+            validateName(
+                lastName,
+                document.getElementById("lastNameError")
+            );
+
+        });
+
+
+        email.addEventListener("input", function () {
+
+            const value = email.value;
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+
+                document.getElementById("emailError").textContent =
+                    "Please enter a valid email";
+
+            } else {
+
+                document.getElementById("emailError").textContent = "";
+
+            }
+
+        });
+
+
+        phone.addEventListener("input", function () {
+
+            const value = phone.value;
+
+            if (!/^[0-9]{10}$/.test(value)) {
+
+                document.getElementById("phoneError").textContent =
+                    "Phone number must be exactly 10 digits";
+
+            } else {
+
+                document.getElementById("phoneError").textContent = "";
+
+            }
+
+        });
+
+
+        password.addEventListener("input", function () {
+
+            const value = password.value;
+
+            if (value.length < 8) {
+
+                document.getElementById("passwordError").textContent =
+                    "Password must be at least 8 characters";
+
+            } else {
+
+                document.getElementById("passwordError").textContent = "";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+

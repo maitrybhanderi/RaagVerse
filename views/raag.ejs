@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Raag <%= raag.name %> - RaagVerse</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <%- include("partials/navbar") %>
+
+    <main>
+
+        <a href="/raags">← All Raags</a>
+
+        <section>
+            <h1>Raag <%= raag.name %></h1>
+
+            <p><%= raag.introduction %></p>
+            
+        </section>
+
+
+        <section>
+
+            <div>
+                <h2>Musical Identity</h2>
+
+                <p>Thaat: <%= raag.thaat %></p>
+                <p>Vaadi: <%= raag.vaadi %></p>
+                <p>Samvaadi: <%= raag.samvaadi %></p>
+                <p>Samay: <%= raag.samay %></p>
+                <p>Mood: <%= raag.mood %></p>
+                <p>Bandish: <%= raag.bandish %></p>
+            </div>
+
+            <div>
+                <h2>Swar Structure</h2>
+
+                <p>Komal/Tivra Swar: <%= raag.komal_tivra %></p>
+                <p>Aaroh: <%= raag.aaroh %></p>
+                <p>Avroh: <%= raag.avroh %></p>
+                <p>Varjya Swar: <%= raag.varjya_swar %></p>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>About the Raag</h2>
+            <p><%= raag.description %></p>
+        </section>
+
+    </main>
+
+    <%- include("partials/footer") %>
+
+</body>
+</html>

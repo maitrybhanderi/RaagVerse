@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Explore Raags - RaagVerse</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <%- include("partials/navbar") %>
+
+    <main>
+
+        <section>
+            <h1>Explore Raags</h1>
+            <p>Discover different raags of Indian classical music.</p>
+        </section>
+
+        <section>
+
+            <% raags.forEach(raag => { %>
+
+                <div>
+                    <span><%= raag.id %></span>
+
+                    <h2>Raag <%= raag.name %> (<%= raag.thaat %>)</h2>
+
+                    <p><%= raag.introduction %></p>
+
+                    <a href="/raags/<%= raag.id %>">Explore →</a>
+                </div>
+
+            <% }) %>
+
+        </section>
+
+    </main>
+
+    <%- include("partials/footer") %>
+
+</body>
+</html>

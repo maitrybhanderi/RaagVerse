@@ -1,0 +1,21 @@
+<nav>
+    <div>
+        <span>RaagVerse</span>
+    </div>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="/raags">Raags</a>
+        <a href="/learn">Learn</a>
+        
+        <% if (userId) { %>
+
+            <a href="/logout">Logout</a>
+
+        <% } else { %>
+
+            <a href="/signup">Signup/Login</a>
+
+        <% } %>
+    </div>
+</nav>
